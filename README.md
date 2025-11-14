@@ -8,9 +8,18 @@ ________________________________________________________________________________
 ## Repository Directory
 
 ### code
+  * one
+  * two
+  * three 
 
 ### data
-
+  * one
+  * two
+  * three
+    
 ### figures
+  * one
+  * two
+  * three
 
 ### results
