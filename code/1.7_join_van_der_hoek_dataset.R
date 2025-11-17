@@ -6,8 +6,6 @@ library(here)
 library(tidyverse)
 library(readxl)
 library(janitor)
-library(terra)
-library(sf)
 
 # van der Hoek
 fac <- readxl::read_xlsx(
@@ -15,90 +13,68 @@ fac <- readxl::read_xlsx(
   sheet = "Tree-cavity nesters") |> 
   janitor::clean_names()
 
-# the usual rigamorole to get our focal grid cells
-download_these <- readr::read_csv(here::here("data/cavity_nesters_review.csv")) |> 
-  dplyr::filter(com == "Eastern Bluebird") |> 
-  dplyr::rename(scientific_name = sci,
-                species_code = code)
-i <- 1
-ex_rast <- terra::rast(
-  paste( here::here("data/abundance/2023/"), 
-         download_these$species_code[i],
-         "seasonal",
-         paste0(download_these$species_code[i], "_abundance_seasonal_mean_27km_2023.tif"),
-         sep = "/"))
-
-ex_rast_centroids <- terra::xyFromCell( ex_rast[[1]], 1:ncell(ex_rast[[1]])) |> 
-  tibble::as_tibble() |> 
-  dplyr::mutate(cell_id = dplyr::row_number()) |> 
-  sf::st_as_sf(
-    coords = c("x", "y"),
-    crs = terra::crs(ex_rast[[1]]))
-
-focal_area <- sf::st_read( here::here("data/focal_area2.shp")) |> 
-  sf::st_transform(crs = terra::crs(ex_rast))
-
-focal_cells <- sf::st_join(
-  ex_rast_centroids, 
-  focal_area) |> 
-  dplyr::filter(!is.na(FID))
-
-d <- readr::read_csv( here::here("data/cavity_species_with_other_species_abundance.csv"))
-
-# these next code chunks are what we developed for final formatting to fit models...
-# this is to identify what species make it through the final filters
-df <- d |> 
-  dplyr::rename( n_secondary_1 = n_secondary, 
-                 sr_secondary_1 = sr_secondary, 
-                 n_primary_1 = n_primary, 
-                 sr_primary_1 = sr_primary) |> 
-  dplyr::mutate( n_all_1 = n_secondary_1 + n_primary_1, 
-                 sr_all_1 = sr_secondary_1 + sr_primary_1,
-                 
-                 n_all_0.5 = n_secondary_0.5 + n_primary_0.5, 
-                 sr_all_0.5 = sr_secondary_0.5 + sr_primary_0.5, 
-                 
-                 n_all_0.25 = n_secondary_0.25 + n_primary_0.25, 
-                 sr_all_0.25 = sr_secondary_0.25 + sr_primary_0.25) |> 
-  tidyr::pivot_longer(n_secondary_1:sr_all_0.25, names_to = "type", values_to = "value") |> 
-  tidyr::separate(type, into = c("metric", "group", "mass_ratio"), sep = "_") |> 
-  dplyr::mutate(is_edge = ifelse(position == "edge", 1, 0),
-                mass_ratio = ifelse(mass_ratio == 1, "all", 
-                                    ifelse(mass_ratio == 0.5, "50%", "25%")))
-
-final1 <- df |> 
-  dplyr::filter( metric == "n") |> 
-  dplyr::filter(group == "secondary") |> 
-  dplyr::filter(mass_ratio == "all") |> 
-  dplyr::mutate(x = as.numeric(scale(log1p(value))),
-                is_edge = factor(is_edge)) |> 
-  dplyr::rename(edge = is_edge, 
-                code = species_code) |> 
-  dplyr::filter(edge == 1) |> 
-  dplyr::filter(cell_id %in% focal_cells$cell_id) |> 
-  dplyr::group_by(com) |> 
-  dplyr::mutate( ncell = n()) |> 
-  dplyr::filter(ncell > 10) |> 
-  dplyr::ungroup()
+# bad coding practice...hard-coding a table that I want to join with VDH
+tmp <- tibble::tibble(
+  com = c("Barrow's Goldeneye", "Black-bellied Whistling-Duck", "Bufflehead", 
+          "Common Goldeneye", "Common Merganser", "Fulvous Whistling-Duck", 
+          "Hooded Merganser", "Wood Duck", "American Kestrel", "Purple Martin", 
+          "Tree Swallow", "Violet-green Swallow", "Black-capped Chickadee", 
+          "Black-crested Titmouse", "Boreal Chickadee", "Bridled Titmouse", 
+          "Carolina Chickadee", "Chestnut-backed Chickadee", "Juniper Titmouse", 
+          "Mountain Chickadee", "Oak Titmouse", "Tufted Titmouse", "Lucy's Warbler", 
+          "Prothonotary Warbler", "Eurasian Tree Sparrow", "House Sparrow", 
+          "Brown-headed Nuthatch", "Pygmy Nuthatch", "Red-breasted Nuthatch", 
+          "White-breasted Nuthatch", "European Starling", "Bewick's Wren", 
+          "Carolina Wren", "Pacific Wren", "Winter Wren", "Northern/Southern House Wren", 
+          "Eastern Bluebird", "Mountain Bluebird", "Western Bluebird", 
+          "Ash-throated Flycatcher", "Brown-crested Flycatcher", "Dusky-capped Flycatcher", 
+          "Great Crested Flycatcher", "Sulphur-bellied Flycatcher", "Lewis's Woodpecker", 
+          "Northern Flicker", "Red-headed Woodpecker", "Boreal Owl", "Barred Owl", 
+          "Eastern Screech-Owl", "Elf Owl", "Flammulated Owl", "Northern Pygmy-Owl", 
+          "Northern Saw-whet Owl", "Spotted Owl", "Western Screech-Owl", 
+          "Whiskered Screech-Owl", "American Barn Owl"),
+  scientific_name = c("Bucephala islandica", "Dendrocygna autumnalis", "Bucephala albeola", 
+                      "Bucephala clangula", "Mergus merganser", "Dendrocygna bicolor", 
+                      "Lophodytes cucullatus", "Aix sponsa", "Falco sparverius", "Progne subis", 
+                      "Tachycineta bicolor", "Tachycineta thalassina", "Poecile atricapillus", 
+                      "Baeolophus atricristatus", "Poecile hudsonicus", "Baeolophus wollweberi", 
+                      "Poecile carolinensis", "Poecile rufescens", "Baeolophus ridgwayi", 
+                      "Poecile gambeli", "Baeolophus inornatus", "Baeolophus bicolor", 
+                      "Leiothlypis luciae", "Protonotaria citrea", "Passer montanus", 
+                      "Passer domesticus", "Sitta pusilla", "Sitta pygmaea", "Sitta canadensis", 
+                      "Sitta carolinensis", "Sturnus vulgaris", "Thryomanes bewickii", 
+                      "Thryothorus ludovicianus", "Troglodytes pacificus", "Troglodytes hiemalis", 
+                      "Troglodytes aedon/musculus", "Sialia sialis", "Sialia currucoides", 
+                      "Sialia mexicana", "Myiarchus cinerascens", "Myiarchus tyrannulus", 
+                      "Myiarchus tuberculifer", "Myiarchus crinitus", "Myiodynastes luteiventris", 
+                      "Melanerpes lewis", "Colaptes auratus", "Melanerpes erythrocephalus", 
+                      "Aegolius funereus", "Strix varia", "Megascops asio", "Micrathene whitneyi", 
+                      "Psiloscops flammeolus", "Glaucidium gnoma", "Aegolius acadicus", 
+                      "Strix occidentalis", "Megascops kennicottii", "Megascops trichopsis", 
+                      "Tyto furcata"),
+  code = c("bargol", "bbwduc", "buffle", "comgol", "commer", "fuwduc", 
+           "hoomer", "wooduc", "amekes", "purmar", "treswa", "vigswa", "bkcchi", 
+           "blctit4", "borchi2", "britit", "carchi", "chbchi", "juntit1", 
+           "mouchi", "oaktit", "tuftit", "lucwar", "prowar", "eutspa", "houspa", 
+           "bnhnut", "pygnut", "rebnut", "whbnut", "eursta", "bewwre", "carwre", 
+           "pacwre1", "winwre3", "y01309", "easblu", "moublu", "wesblu", 
+           "astfly", "bncfly", "ducfly", "grcfly", "subfly", "lewwoo", "norfli", 
+           "rehwoo", "borowl", "brdowl", "easowl1", "elfowl", "flaowl", 
+           "nopowl", "nswowl", "spoowl", "wesowl1", "whsowl1", "brnowl"))
 
 # first try joining based on scientific name
-sci_join <- final1 |> 
-  dplyr::select(com, scientific_name, code) |> 
-  dplyr::distinct() |> 
+sci_join <- tmp |> 
   dplyr::left_join(
     fac |> 
       dplyr::select(scientific_name, ob = obligate_or_facultative, type = cavity_nester_type)) |> 
   dplyr::filter(!is.na(ob))
 
 # second try joining based on common name
-com_join <- final1 |> 
-  dplyr::select(com, scientific_name, code) |> 
-  dplyr::distinct() |> 
+com_join <- tmp |> 
   dplyr::left_join(
     fac |> 
       dplyr::select(com = name, ob = obligate_or_facultative, type = cavity_nester_type)) |> 
   dplyr::filter(!is.na(ob))
-
 
 # DANGER ZONE
 # there were a few species that didn't join up readily 

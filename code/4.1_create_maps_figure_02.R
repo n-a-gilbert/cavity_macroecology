@@ -111,7 +111,7 @@ focal_cells <- sf::st_join(
   dplyr::filter(!is.na(FID))
 
 # grab the bluebird data
-d <- readr::read_csv( here::here("data/cavity_species_with_other_species_abundance.csv"))
+d <- readr::read_csv( here::here("data/cavity_species_with_other_species_abundance_v02.csv"))
 
 edge_eabl <- d |> 
   dplyr::filter(species_code == "easblu") |> 
