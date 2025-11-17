@@ -4,6 +4,19 @@
 __________________________________________________________________________________________________________________________________________
 
 ## Abstract
+**Aim.** Biotic interactions are often overlooked as range-limiting factors but may help explain why some species are not shifting their ranges as expected with climate change. At local scales, bird species that nest in tree cavities but cannot create cavities themselves—“non-excavator” species—experience competition with other non-excavators but facilitation by excavator species such as woodpeckers. However, it is unknown whether these biotic interactions scale up to limit the ranges of cavity-nesting birds. Thus, our objective was to evaluate whether competition and facilitation mediate the range limits of non-excavator cavity-nesting birds; for non-excavator species at their range limits, we predicted (1) negative relationships with abundance of non-excavator heterospecifics (competition), (2) a positive relationship with abundance of excavator heterospecifics (facilitation), (3) stronger relationships for heterospecifics of similar body size, and (4) strongest competitive effects of aggressive non-invasive species. 
+
+**Location.** United States and Canada.  
+
+**Time Period.** Contemporary. 
+
+**Group** Cavity-nesting birds (58 non-excavator species, 20 excavator species). 
+
+**Methods.** We modeled abundance of non-excavator species within their non-coastal range limits as a function of summed abundances of heterospecifics in range-limit locations. We identified cavity-nesting species using published databases of avian nest traits and extracted breeding-season relative abundance maps from the eBird Status & Trends data product. We fit generalized linear mixed-effects models in which range-limit abundance of non-excavators was predicted by (1) summed abundances of all other non-excavators, (2) summed abundances of non-excavators within 50% body mass of the focal species, (3) summed abundances of all excavators, (4) summed abundances of excavators within 50% body mass of the focal species, or (5) abundances of either House Sparrows (Passer domesticus) or European Starlings (Sturnus vulgaris).    
+
+**Results.** There was limited evidence that abundance of cavity-nesting heterospecifics limited the ranges of non-excavator species. At a cross-species level, the effects of heterospecific non-excavator abundance and excavator abundance were not significant. At a species level, only 3 species (5% of the total) showed strong (≥95% confidence) competitive effects of non-excavators and strong facilitative effects of excavators. However, non-invasive ‘supercompetitors’ tended to reduce range-limit abundance; for example, nine out of the seventeen (53%) non-excavators within 50% body mass of House Sparrows showed significant negative effects of sparrow abundance on range-limit abundance.
+
+**Main Conclusions.** While nest-site competition and facilitation are apparent at local scales, we did not detect evidence of these biotic interactions at a macroecological scale. This is consistent with the ‘Eltonian Noise Hypothesis’, which suggests that biotic interactions get ‘washed out’ at broadening spatial scales such that only abiotic variables correlate with species distributions at broad scales. Among-species variation in processes such as habitat selection (e.g., preferences for cavities at different heights) and nesting phenology may contribute to the limited evidence we found of range limits being formed by nest-site competition or facilitation. 
 
  $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ <img src="https://github.com/n-a-gilbert/cavity_macroecology/blob/main/figures/figure_01.png" width="600" />
 ## Repository Directory
