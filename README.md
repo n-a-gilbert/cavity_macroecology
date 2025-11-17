@@ -160,8 +160,17 @@ ________________________________________________________________________________
     | type | Non-excavator or excavator |
 
 ### figures
-  * one
-  * two
-  * three
+  * [figure_01.png](./figures/figure_01.png) Figure 1
+  * [figure_01.pptx](./figures/figure_01.pptx) Figure 1 (PowerPoint format for annotation)
+  * [figure_01b.png](./figures/figure_01b.png) Figure 1b
+  * [figure_02.png](./figures/figure_02.png) Figure 2
+  * [figure_02.pptx](./figures/figure_02.pptx) Figure 2 (PowerPoint format for collation/annotation)
+  * [figure_03.png](./figures/figure_03.png) Figure 3
+  * [figure_04.png](./figures/figure_04.png) Figure 4
+  * [figure_04.pptx](./figures/figure_04.pptx) Figure 4 (PowerPoint format for annotation)
+  * [figure_05.png](./figures/figure_05.png) Figure 5
+  * [figure_06.png](./figures/figure_06.png) Figure 6
+  * [figure_06.pptx](./figures/figure_06.pptx) Figure 6 (PowerPoint format for annotation)
 
 ### results
+  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R)  
