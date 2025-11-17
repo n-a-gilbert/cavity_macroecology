@@ -28,7 +28,21 @@ ________________________________________________________________________________
 ** NOTE ** eBird range maps and abundance maps are not included in this repository due to file size limitations. Upon running [1.1_download_cavity_nester_range_maps.R](./code/1.1_download_cavity_nester_range_maps.R) and [1.5_download_ebird_abundance_maps.R](./code/1.5_download_ebird_abundance_maps.R), you will have subfolders named `abundance` and `ranges` within the data folder.
   * [chia](./data/chia). Folder with tables from [Chia et al. 2023](https://www.nature.com/articles/s41597-023-02837-1). See that publication for further details
   * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail  
-  * three
+  * [cavity_nesters_abundance_dists.csv](./data/cavity_nesters_abundance_dists.csv). Table with cavity-nester abundance and columns for distance to coast and range edge.
+    | column | meaning |
+    |--------|---------|
+    | cell_id | unique ID for grid cell (27 x 27 km ) |
+    | com | common name per eBird |
+    | scientific_name | scientific name per eBird |
+    | species_code | 6-letter ebird code |
+    | n | relative abundance |
+    | coast_dist | distance in meters from the grid cell's centroid to the nearest coastline |
+    | range_dist | distance in meters from the grid cell's centroid to the nearest range edge |
+
+   
+
+  * 
+
     
 ### figures
   * one
