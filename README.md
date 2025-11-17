@@ -49,7 +49,22 @@ ________________________________________________________________________________
     | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
     | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
     | tree | binary indicator of whether or not species nests in trees |
-  * b
+  * [cavity_species_REVIEWED.csv](./data/cavity_species_REVIEWED.csv). Final table (same as above, but with our annotations added)
+    | column | meaning |
+    |--------|---------|
+    | order | species order |
+    | family | species family |
+    | sci | scientific name |
+    | com | common name |
+    | code | 6-letter code |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | tree | binary indicator of whether or not species nests in trees |
+    | feral | binary indicator of whether species occurs only as small feral populations in North America; this was done for parrots only |
+    | neil_classification | First author (Neil) did a initial screening and classified species as "good", "omit" (not cavity nesters), or "idk" (species he was unsure of) |
+    | hallie_classification | Last author (Hallie) did a subsequent screening of species marked "idk" in the previous step and classified species as "good" (cavity nesters) or "omit" (not cavity nesters) |
+    | notes | Notes taken during manual review |
+  * 
     
   * b
 
