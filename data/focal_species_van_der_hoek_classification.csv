@@ -1,0 +1,59 @@
+com,scientific_name,code,ob,type
+Barrow's Goldeneye,Bucephala islandica,bargol,Facultative,Non-excavator
+Bufflehead,Bucephala albeola,buffle,Facultative,Non-excavator
+Common Goldeneye,Bucephala clangula,comgol,Facultative,Non-excavator
+Hooded Merganser,Lophodytes cucullatus,hoomer,Facultative,Non-excavator
+Wood Duck,Aix sponsa,wooduc,Obligate,Non-excavator
+American Kestrel,Falco sparverius,amekes,Obligate,Non-excavator
+Purple Martin,Progne subis,purmar,Facultative,Non-excavator
+Tree Swallow,Tachycineta bicolor,treswa,Obligate,Non-excavator
+Violet-green Swallow,Tachycineta thalassina,vigswa,Facultative,Non-excavator
+Black-capped Chickadee,Poecile atricapillus,bkcchi,Facultative,Facultative excavator
+Black-crested Titmouse,Baeolophus atricristatus,blctit4,Facultative,Facultative excavator
+Boreal Chickadee,Poecile hudsonicus,borchi2,Obligate,Facultative excavator
+Bridled Titmouse,Baeolophus wollweberi,britit,Obligate,Facultative excavator
+Carolina Chickadee,Poecile carolinensis,carchi,Obligate,Facultative excavator
+Chestnut-backed Chickadee,Poecile rufescens,chbchi,Facultative,Facultative excavator
+Juniper Titmouse,Baeolophus ridgwayi,juntit1,Obligate,Facultative excavator
+Mountain Chickadee,Poecile gambeli,mouchi,Obligate,Facultative excavator
+Oak Titmouse,Baeolophus inornatus,oaktit,Obligate,Facultative excavator
+Tufted Titmouse,Baeolophus bicolor,tuftit,Obligate,Facultative excavator
+Lucy's Warbler,Leiothlypis luciae,lucwar,Facultative,Non-excavator
+Prothonotary Warbler,Protonotaria citrea,prowar,Obligate,Non-excavator
+Eurasian Tree Sparrow,Passer montanus,eutspa,Facultative,Non-excavator
+House Sparrow,Passer domesticus,houspa,Facultative,Non-excavator
+Brown-headed Nuthatch,Sitta pusilla,bnhnut,Obligate,Facultative excavator
+Pygmy Nuthatch,Sitta pygmaea,pygnut,Obligate,Facultative excavator
+Red-breasted Nuthatch,Sitta canadensis,rebnut,Obligate,Facultative excavator
+White-breasted Nuthatch,Sitta carolinensis,whbnut,Obligate,Non-excavator
+Bewick's Wren,Thryomanes bewickii,bewwre,Facultative,Non-excavator
+Carolina Wren,Thryothorus ludovicianus,carwre,Facultative,Non-excavator
+Mountain Bluebird,Sialia currucoides,moublu,Obligate,Non-excavator
+Ash-throated Flycatcher,Myiarchus cinerascens,astfly,Obligate,Non-excavator
+Brown-crested Flycatcher,Myiarchus tyrannulus,bncfly,Obligate,Non-excavator
+Dusky-capped Flycatcher,Myiarchus tuberculifer,ducfly,Obligate,Non-excavator
+Great Crested Flycatcher,Myiarchus crinitus,grcfly,Obligate,Non-excavator
+Sulphur-bellied Flycatcher,Myiodynastes luteiventris,subfly,Obligate,Non-excavator
+Lewis's Woodpecker,Melanerpes lewis,lewwoo,Facultative,Facultative excavator
+Red-headed Woodpecker,Melanerpes erythrocephalus,rehwoo,Facultative,Facultative excavator
+Boreal Owl,Aegolius funereus,borowl,Obligate,Non-excavator
+Barred Owl,Strix varia,brdowl,Facultative,Non-excavator
+Elf Owl,Micrathene whitneyi,elfowl,Obligate,Non-excavator
+Flammulated Owl,Psiloscops flammeolus,flaowl,Obligate,Non-excavator
+Black-bellied Whistling-Duck,Dendrocygna autumnalis,bbwduc,Facultative,Non-excavator
+Common Merganser,Mergus merganser,commer,Facultative,Non-excavator
+Northern Flicker,Colaptes auratus,norfli,Facultative,Primary excavator
+Fulvous Whistling-Duck,Dendrocygna bicolor,fuwduc,Facultative,Non-excavator
+European Starling,Sturnus vulgaris,eursta,Facultative,Non-excavator
+Pacific Wren,Troglodytes pacificus,pacwre1,Facultative,Non-excavator
+Winter Wren,Troglodytes hiemalis,winwre3,Facultative,Non-excavator
+Northern/Southern House Wren,Troglodytes aedon/musculus,y01309,Facultative,Non-excavator
+Eastern Bluebird,Sialia sialis,easblu,Obligate,Non-excavator
+Western Bluebird,Sialia mexicana,wesblu,Obligate,Non-excavator
+Eastern Screech-Owl,Megascops asio,easowl1,Facultative,Non-excavator
+Northern Pygmy-Owl,Glaucidium gnoma,nopowl,Obligate,Non-excavator
+Northern Saw-whet Owl,Aegolius acadicus,nswowl,Facultative,Non-excavator
+Spotted Owl,Strix occidentalis,spoowl,Facultative,Non-excavator
+Western Screech-Owl,Megascops kennicottii,wesowl1,Obligate,Non-excavator
+Whiskered Screech-Owl,Megascops trichopsis,whsowl1,Obligate,Non-excavator
+American Barn Owl,Tyto furcata,brnowl,Facultative,Non-excavator
