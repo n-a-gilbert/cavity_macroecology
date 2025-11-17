@@ -156,11 +156,9 @@ ________________________________________________________________________________
     | com | common name per eBird |
     | scientific_name | scientific name per eBird |
     | code | 6-letter ebird code |
-    | `Obligate or Facultative` | Indicates whether species is an obligate or facultative cavity nester |
+    | Obligate or Facultative | Indicates whether species is an obligate or facultative cavity nester |
     | type | Non-excavator or excavator |
-  * b
 
-    
 ### figures
   * one
   * two
