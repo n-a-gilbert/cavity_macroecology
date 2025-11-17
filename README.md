@@ -5,6 +5,7 @@ ________________________________________________________________________________
 
 ## Abstract
 
+ $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ <img src="https://github.com/n-a-gilbert/cavity_macroecology/blob/main/figures/figure_01.png" width="600" />
 ## Repository Directory
 
 ### code 
