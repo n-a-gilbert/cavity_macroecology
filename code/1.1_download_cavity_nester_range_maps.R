@@ -1,10 +1,14 @@
+# identify cavity-nesters using the Chia nest database and download range maps
 library(ebirdst)
 library(tidyverse)
 library(here)
 
+# species in the eBird S&T Data Products
 sp_list <- ebirdst::ebirdst_runs |> 
   tibble::as_tibble()
 
+# Chia nest database
+# https://www.nature.com/articles/s41597-023-02837-1
 chia <- readr::read_csv( here::here("data/chia/NestTrait_v2.csv"))
 
 sci_name_join <- chia |> 
@@ -31,8 +35,9 @@ sci_name_join <- chia |>
                     breeding_quality)) |> 
   dplyr::filter(!is.na(primary))
 
+# join eBird and chia
 got_cavity <- chia |> 
-  # recovery a few more joins based on common name
+  # recover a few more joins based on common name
   dplyr::select(
     order = Order, 
     family = Family,
@@ -68,6 +73,7 @@ download_these <- got_cavity |>
       dplyr::filter(! scientific_name %in% got_cavity$scientific_name) |> 
       dplyr::select(species_code, scientific_name, common_name))
 
+# download range maps
 for(i in 1:length(download_these$scientific_name)){
   ebirdst::ebirdst_download_status( species = download_these$scientific_name[i], 
                                     path = here::here("data/ranges"),

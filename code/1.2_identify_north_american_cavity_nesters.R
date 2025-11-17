@@ -1,23 +1,28 @@
+# This script follows up from 1.1_download_cavity_nester_range_maps.R
+# Here, we filter down to species whose range maps intersects with the USA, Canada, or Mexico
+
 library(here)
 library(tidyverse)
 library(sf)
 library(rnaturalearth)
 
+# created by 1.1_download_cavity_nester_range_maps.R
 sp <- readr::read_csv( here::here("data/download_range_maps_for_these_species.csv")) |> 
   dplyr::arrange(species_code) 
 
-map <- sf::st_read( here::here("data/ranges/2023/acowoo/ranges/acowoo_range_smooth_27km_2023.gpkg"))
-
+# shapefile of world's countries
 countries <- rnaturalearth::ne_countries(scale = 50, returnclass = "sf")
 
+# USA, Canada, Mexico
 target_countries <- countries[countries$admin %in% c("United States of America", "Canada", "Mexico"), ]
 
 study_area <- target_countries |> 
   dplyr::summarise(geometry = sf::st_union(geometry)) |> 
   sf::st_make_valid()
 
-# loop broke bc I guess ebird automatically calls YBSA folder yebsap-example rather than just
-# yebsap
+
+# okay, the loop broke because ebirdst automatically calls YBSA folder yebsap-example rather than just yebsap
+# bad hard-coded workaround
 res <- list(list())
 # for( i in 1:length(sp$species_code)){
 for( i in 900:length(sp$species_code)){
@@ -30,7 +35,9 @@ for( i in 900:length(sp$species_code)){
            sep = "/")) |> 
     sf::st_make_valid()
   
+  # is specie's map entirely within focal area? 
   within <- as.numeric(lengths(sf::st_within(map, study_area)))
+  # does species' map intersect with focal area?
   inter <- as.numeric(lengths(sf::st_intersects(map, study_area)))
   
   res[[i]] <- tibble::tibble(
@@ -42,6 +49,7 @@ for( i in 900:length(sp$species_code)){
   
 }
 
+# this gives us a file of species that occur in north america that are cavity nesters
 dplyr::bind_rows(res) |> 
   dplyr::group_by(species_code) |> 
   dplyr::summarise( across(c(within, inter), function(x) max(x))) |> 

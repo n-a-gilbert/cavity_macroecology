@@ -1,3 +1,6 @@
+# this runs after 1.2_identify_north_american_cavity_nesters.R
+# we did a manual review of eBird S&T species that didn't readily join to the Chia database
+# and also to validate some questionable classifications
 library(tidyverse)
 library(here)
 
@@ -8,11 +11,9 @@ chia <- readr::read_csv(here::here("data/chia/NestTrait_v2.csv")) |>
 
 download_these <- readr::read_csv(here::here("data/download_range_maps_for_these_species.csv"))
 
-# these are all feral/exotic parrots
-# "Ara ararauna", "Cyanoliseus patagonus", "Ara severus", "Agapornis roseicollis", "Brotogeris chiriri"
-
 d |> 
   dplyr::left_join(download_these) |> 
+  # omit vultures + ocean birds that nest in burrows
   dplyr::filter(!family %in% c("Cathartidae", "Alcidae", "Oceanitidae", 
                                "Hydrobatidae", "Procellariidae")) |>
   # Nutting's Flycatcher coded as not nesting in trees has to be an error
