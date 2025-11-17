@@ -93,6 +93,71 @@ ________________________________________________________________________________
     | sr_primary2 | species richness of excavators (obligate and facultative) within the grid cell |
     | n_primary2_0.5 | summed abundance of excavators (obligate and facultative) - similar size  within the grid cell |
     | sr_primary2_0.5 | species richness of excavators (obligate and facultative) within the grid cell |
+  * [cell_coast_dist.csv](./data/cell_coast_dist.csv). Distance from each grid cell centroid to the nearest coastline
+    | column | meaning |
+    |--------|---------|
+    | cell_id | grid cell identifier |
+    | coast_dist | distance to nearest coastline (meters) |
+  * [ddi12601-sup-0001-tables1.xlsx](./data/ddi12601-sup-0001-tables1.xlsx). Data from [van der Hoek et al. 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12601). See that paper for further details.
+  * [download_range_maps_for_these_species.csv](./data/download_range_maps_for_these_species.csv). Species to download range maps for
+    | column | meaning |
+    |--------|---------|
+    | order | species order |
+    | family | species family |
+    | species_code | 6-letter ebird code |
+    | scientific_name | scientific name per eBird |
+    | common_name | common name per eBird |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | tree | binary indicator of whether or not species nests in trees |
+  * [final_species_list.csv](./data/final_species_list.csv). Species list after some filtering/review, etc.
+    | column | meaning |
+    |--------|---------|
+    | order | species order |
+    | family | species family |
+    | sci | scientific name per eBird |
+    | com | common name per eBird |
+    | code | 6-letter ebird code |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | tree | binary indicator of whether or not species nests in trees |
+  * [focal_area2.shp](./data/focal_area2.shp). Focal area (mainland US and Canada); this polygon was created in [1.6_create_focal_area_shapefile](./code/1.6_create_focal_area_shapefile.R). The other extensions (`.dbf`, etc) are in this folder but not described here.
+  * [focal_species_van_der_hoek_classification.csv](./data/focal_species_van_der_hoek_classification.csv). Non-excavators from analysis with van der Hoek classifications.
+    | column | meaning |
+    |--------|---------|
+    | com | common name per eBird |
+    | sci | scientific name per eBird |
+    | code | 6-letter ebird code |
+    | ob | describes species as either an "obligate" or "facultative" cavity-nester |
+    | type | describes species as either "excavator" or "non-excavator" |
+  * [north_america_cavity_nesters_to_review.csv](./data/north_america_cavity_nesters_to_review.csv). Cavity-nesting species occuring within North America to review manually for accuracy
+    | column | meaning |
+    |--------|---------|
+    | species_code | 6-letter ebird code |
+    | within | indicates whether species breeding range is entirely within USA, Canada, and Mexico |
+    | inter | indicates whether species breeding range intersects with USA, Canada, and Mexico |
+    | com | common name per eBird |
+    | sci | scientific name per eBird |
+    | order | species order |
+    | family | species family |
+    | scientific_name | scientific name per eBird |
+    | common_name | common name per eBird |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+  * [review_species_van_der_hoek_join.csv](./data/review_species_van_der_hoek_join.csv). Small table of species to manually review due to taxonomy idiosyncracies
+    | column | meaning |
+    |--------|---------|
+    | com | common name per eBird |
+    | scientific_name | scientific name per eBird |
+    | code | 6-letter ebird code |
+  * [review_species_van_der_hoek_join_v2.csv](./data/review_species_van_der_hoek_join_v2.csv) Same table as above, but post-review
+       | column | meaning |
+    |--------|---------|
+    | com | common name per eBird |
+    | scientific_name | scientific name per eBird |
+    | code | 6-letter ebird code |
+    | `Obligate or Facultative` | Indicates whether species is an obligate or facultative cavity nester |
+    | type | Non-excavator or excavator |
   * b
 
     
