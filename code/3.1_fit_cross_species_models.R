@@ -59,7 +59,7 @@ df <- d |>
   dplyr::mutate(is_edge = ifelse(position == "edge", 1, 0),
                 mass_ratio = ifelse(mass_ratio == 1, "all", 
                                     ifelse(mass_ratio == 0.5, "50%", "blah"))) |> 
-  dplyr::mutate(group = ifelse(group == "primary2", "strict primary", group))
+  dplyr::mutate(group = ifelse(group == "primary2", "general primary", group))
 
 # final formatting for model 1
 # here, the predictor variable is abundance of ALL other NON-EXCAVATORS
@@ -133,8 +133,8 @@ m2_brm <- brms::brm(
 # here, the predictor variable is abundance of ALL other EXCAVATORS
 final3 <- df |> 
   dplyr::filter( metric == "n") |> 
-  dplyr::filter(group == "strict primary") |>  # strict primary = obligate excavator
-  dplyr::filter(is.na(mass_ratio)) |>  # NA mass ratio for this group represents all species
+  dplyr::filter(group == "primary") |>  # strict primary = obligate excavator
+  dplyr::filter(mass_ratio == "all") |>  
   dplyr::mutate(x = as.numeric(scale(log1p(value))),
                 is_edge = factor(is_edge)) |> 
   dplyr::rename(edge = is_edge, 
@@ -164,7 +164,7 @@ m3_brm <- brms::brm(
 # here, the predictor variable is abundance of SIMLAR-SIZED EXCAVATORS
 final4 <- df |> 
   dplyr::filter( metric == "n") |> 
-  dplyr::filter(group == "strict primary") |> 
+  dplyr::filter(group == "primary") |> 
   dplyr::filter(mass_ratio == "50%") |> 
   dplyr::mutate(x = as.numeric(scale(log1p(value))),
                 is_edge = factor(is_edge)) |> 
