@@ -64,8 +64,35 @@ ________________________________________________________________________________
     | neil_classification | First author (Neil) did a initial screening and classified species as "good", "omit" (not cavity nesters), or "idk" (species he was unsure of) |
     | hallie_classification | Last author (Hallie) did a subsequent screening of species marked "idk" in the previous step and classified species as "good" (cavity nesters) or "omit" (not cavity nesters) |
     | notes | Notes taken during manual review |
-  * 
-    
+  * [cavity_species_with_other_species_abundance_v02.csv](./data/cavity_species_with_other_species_abundance_v02.csv). Table with cavity-nester abundance and columns for distance to coast and range edge, and abundance of heterospecifics
+    | column | meaning |
+    |--------|---------|
+    | cell_id | unique ID for grid cell (27 x 27 km ) |
+    | com | common name per eBird |
+    | scientific_name | scientific name per eBird |
+    | species_code | 6-letter ebird code |
+    | n | relative abundance |
+    | coast_dist | distance in meters from the grid cell's centroid to the nearest coastline |
+    | range_dist | distance in meters from the grid cell's centroid to the nearest range edge |
+    | position | Position within range (edge or core) |
+    | mass | species' mass from avonet |
+    | order | species order |
+    | family | species family |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | tree | binary indicator of whether or not species nests in trees |
+    | n_secondary | summed abundance of other non-excavators within the grid cell |
+    | sr_secondary | species richness of other non-excavators within the grid cell |
+    | n_secondary_0.5 | summed abundance of other non-excavators - similar sized only - within the grid cell |
+    | sr_secondary_0.5 | species richness of other non-excavators - similar sized only -  within the grid cell |
+    | n_primary | summed abundance of obligate excavators within the grid cell |
+    | sr_primary | species richness of obligate excavators within the grid cell |
+    | n_primary_0.5 | summed abundance of obligate excavators - similar size only - within the grid cell |
+    | sr_primary_0.5 | species richness of obligate excavators - similar size only - within the grid cell |
+    | n_primary2 | summed abundance of excavators (obligate and facultative) within the grid cell |
+    | sr_primary2 | species richness of excavators (obligate and facultative) within the grid cell |
+    | n_primary2_0.5 | summed abundance of excavators (obligate and facultative) - similar size  within the grid cell |
+    | sr_primary2_0.5 | species richness of excavators (obligate and facultative) within the grid cell |
   * b
 
     
