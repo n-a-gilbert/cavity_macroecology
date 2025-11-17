@@ -38,10 +38,20 @@ ________________________________________________________________________________
     | n | relative abundance |
     | coast_dist | distance in meters from the grid cell's centroid to the nearest coastline |
     | range_dist | distance in meters from the grid cell's centroid to the nearest range edge |
-
-   
-
-  * 
+  * [cavity_nesters_review.csv](./data/cavity_nesters_review.csv). Table we generated to review the Chia et al classifications
+    | column | meaning |
+    |--------|---------|
+    | order | species order |
+    | family | species family |
+    | sci | scientific name |
+    | com | common name |
+    | code | 6-letter code |
+    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | tree | binary indicator of whether or not species nests in trees |
+  * b
+    
+  * b
 
     
 ### figures
