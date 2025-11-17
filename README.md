@@ -7,7 +7,7 @@ ________________________________________________________________________________
 
 ## Repository Directory
 
-### code
+### code 
   * [1.1_download_cavity_nester_range_maps.R](./code/1.1_download_cavity_nester_range_maps.R). This script downloads eBird range maps for cavity-nesting species.
   * [1.2_identify_north_american_cavity_nesters.R](./code/1.2_identify_north_american_cavity_nesters.R). This script identifies which cavity-nesters occur within North America
   * [1.3_make_list_of_cavity_nesters_to_review.R](./code/1.3_make_list_of_cavity_nesters_to_review.R). Script to make a table of species of manually review; there were some species that did not readily join to taxonomy shenanigans
@@ -25,8 +25,8 @@ ________________________________________________________________________________
   * [4.3_create_figures_03_04_05.R](./code/4.3_create_figures_03_04_05.R). Create the other figures 
 
 ### data
-  * one
-  * two
+  * [chia](./data/chia). Folder with tables from [Chia et al. 2023](https://www.nature.com/articles/s41597-023-02837-1). See that publication for further details
+  * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail  
   * three
     
 ### figures
