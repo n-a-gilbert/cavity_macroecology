@@ -1,0 +1,16 @@
+data/abundance/
+data/ranges/
+manuscript
+figures/hb_poster
+figures/mike_bluebird_photos
+figures/eabl.jpg
+figures/eabl_map.png
+figures/tres.jpg
+figures/tres_map.png
+figures/wbnu.jpg
+figures/wbnu_map.png
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
