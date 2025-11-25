@@ -218,15 +218,22 @@ ggplot(for_plot, aes(x = mass_ratio, y = estimate)) +
     fill = MetBrewer::MetPalettes$Isfahan1[[1]][7],
     alpha = 0.3) +
   geom_point(aes(color = sig), size = 2) +
-  # mannually add in some species labels in powerpoint :(
   ggrepel::geom_text_repel(
-    data = filter(for_plot, !(com1 %in% c("Violet-green Swallow", "Carolina Wren",
-                                          "Red-headed Woodpecker", "Tufted Titmouse",
-                                          "Western Bluebird", "Eastern Bluebird"))),
-    aes(color = sig,label = com1),
-                           size = 2.2) +
+    data = for_plot, aes(color = sig, label = com1), size = 2
+  ) +
+  # mannually add in some species labels in powerpoint :(
+  # ggrepel::geom_text_repel(
+    # data = filter(for_plot, !(com1 %in% c("Violet-green Swallow", "Carolina Wren",
+                                          # "Red-headed Woodpecker", "Lewis's Woodpecker", "Tufted Titmouse",
+                                          # "Western Bluebird", "Eastern Bluebird", "Tree Swallow",
+                                          # "Eurasian Tree Sparrow", "Great Crested Flycatcher",
+                                          # "Ash-throated Flycatcher", "Mountain Bluebird"))),
+    # aes(color = sig,label = com1),
+                           # size = 2.2) +
   theme_minimal() +
   scale_color_manual(values = c("gray60", "black")) +
+  scale_y_continuous(limits = c(-1.15, 0.27),
+                     breaks = c(-1, -0.75, -0.5, -0.25, 0, 0.25)) +
   labs(x = "Mass ratio", 
        y = "effect of 'supercompetitor' abundance at range limits") +
   theme(axis.line = element_line(linewidth = 0.2, color = "black"),
