@@ -36,11 +36,18 @@ ________________________________________________________________________________
   * [3.2_supercompetitor_analysis_figure_06.R](./code/3.2_supercompetitor_analysis_figure_06.R). Do "supercompetitor" analysis and create Figure 6
   * [4.1_create_figure_01b.R](./code/4.1_create_figure_01b.R). Create conceptual graph for Fig. 1b
   * [4.2_create_maps_figure_02.R](./code/4.2_create_maps_figure_02.R). Create species maps for Fig. 2
-  * [4.3_create_figures_03_04_05.R](./code/4.3_create_figures_03_04_05.R). Create the other figures 
+  * [4.3_create_figures_03_04_05.R](./code/4.3_create_figures_03_04_05.R). Create the other figures
+  * [5.1_revision_core_analysis.R](./code/5.1_revision_core_analysis.R) Revision analysis: comparing effects of heterospecific abundance within range edges and range cores
+  * [5.2_revision_edge_5th_percentile.R](./code/5.2_revision_edge_5th_percentile.R) Revision sensitivity analysis: range edges defined based on 5th percentiles of distance-to-range-edge
+  * [5.3_revision_edge_20th_percentile.R](./code/5.3_revision_edge_20th_percentile.R) Revision sensitivity analysis: range edges defined based on 20th percentiles of distance-to-range-edge
+  * [5.4_revision_coast_50km.R](./code/5.4_revision_coast_50km.R) Revision sensitivity analysis: defining non-coastal cells as >50 km from coast (instead of 100 km)
+  * [5.5_revision_supercompetitor_habitat.R](./code/5.5_revision_supercompetitor_habitat.R) Revision analysis: accounting for anthropogenic habitat in supercompetitor models
+  * [5.6_revision_body_mass_25percent.R](./code/5.6_revision_body_mass_25percent.R) Revision sensitivity analysis: evaluating effects of heterospecifics within 25% of body mass
 
 ### data
 ** NOTE ** eBird range maps and abundance maps are not included in this repository due to file size limitations. Upon running [1.1_download_cavity_nester_range_maps.R](./code/1.1_download_cavity_nester_range_maps.R) and [1.5_download_ebird_abundance_maps.R](./code/1.5_download_ebird_abundance_maps.R), you will have subfolders named `abundance` and `ranges` within the data folder.
   * [chia](./data/chia). Folder with tables from [Chia et al. 2023](https://www.nature.com/articles/s41597-023-02837-1). See that publication for further details
+  * [GHM_27km_WGS84.tif](.data/GHM_27km_WGS84.tif) Human modification raster aggregated to 27 km resolution using Google Earth Engine (GEE). See [GEE Data Catalogue](https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification) for more information on this layer.
   * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail  
   * [cavity_nesters_abundance_dists.csv](./data/cavity_nesters_abundance_dists.csv). Table with cavity-nester abundance and columns for distance to coast and range edge.
     | column | meaning |
