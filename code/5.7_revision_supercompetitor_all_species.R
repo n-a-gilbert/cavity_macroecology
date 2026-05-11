@@ -156,17 +156,23 @@ for( i in 1:length(secondary)){
 # com1 = species name of non-excavator
 # com2 = speices name of supercompetitor
 pw <- bind_rows(pw_hs) |> 
-  dplyr::filter(!is.na(mass_ratio)) |> 
-  dplyr::filter(mass_ratio > 0.5 & mass_ratio < 1.5)
+  dplyr::filter(!is.na(mass_ratio)) #|> 
+  # dplyr::filter(mass_ratio > 0.5 & mass_ratio < 1.5)
 
-ucom1 <- unique(pw$com1)
+# ucom1 <- unique(pw$com1)
+# ucom2 <- unique(pw$com2)
+
+combos <- pw |> 
+  dplyr::ungroup() |> 
+  dplyr::select(com1, com2) |> 
+  dplyr::distinct()
 
 # loop through each non-excavator and fit GLMM for each
 glmm_output <- list(list())
-for(i in 1:length(ucom1)){
-  
+for(i in 1:nrow(combos)){
+
   tmp <- pw |> 
-    dplyr::filter(com1 == ucom1[i]) |> 
+    dplyr::right_join( combos[i, ]) |> 
     dplyr::mutate(x = as.numeric(scale(log1p(n2))))
   
   m <- glmmTMB(
@@ -182,7 +188,7 @@ for(i in 1:length(ucom1)){
     add_column(com1 = unique(tmp$com1),
                com2 = unique(tmp$com2))
   
-  print(paste("finished", i, "of", length(ucom1)))
+  print(paste("finished", i, "of", nrow(combos)))
   
 }
 
@@ -257,16 +263,8 @@ ggplot() +
         plot.background = element_rect(color = NA, 
                                        fill = "white"))
 
-ggsave(
-  filename = here::here("figures/figure_06.png"), 
-  width = 5.5, 
-  height = 4, 
-  units = "in", 
-  dpi = 600
-)
-
 # get bean-counting stations - how many species show significant positive/negative effects of supercompetitors
-bind_rows(glmm_output) |> 
+restab <- bind_rows(glmm_output) |> 
   dplyr::filter(grepl("Estimate", what) | grepl("Pr", what)) |> 
   tidyr::pivot_wider(names_from = what, values_from = value) |> 
   dplyr::left_join( 
@@ -274,11 +272,25 @@ bind_rows(glmm_output) |>
       dplyr::ungroup() |> 
       dplyr::select(com1, com2, mass_ratio) |> 
       dplyr::distinct()) |> 
-  dplyr::mutate(sig = ifelse(`Pr(>|z|)` < 0.05, "significant", "not significant"),
-                dir = ifelse(Estimate < 0, "neg", "pos")) |> 
-  dplyr::group_by(com2, dir, sig) |> 
+  dplyr::mutate(significant = ifelse(`Pr(>|z|)` < 0.05, "significant", "not significant"),
+                direction = ifelse(Estimate < 0, "negative", "positive")) |> 
+  dplyr::group_by(com2, direction, significant) |> 
   dplyr::count() |> 
   dplyr::group_by(com2) |> 
   dplyr::mutate(tot = sum(n)) |> 
-  dplyr::mutate(prop = n / tot) |> 
-  dplyr::filter(sig == "significant")
+  dplyr::mutate(prop = round(n / tot, 2)) |> 
+  dplyr::filter(significant == "significant") |> 
+  dplyr::rename(supercompetitor = com2) |> 
+  dplyr::select(supercompetitor, direction, n_species = n, prop_species = prop) |> 
+  dplyr::ungroup()
+
+flextable::set_flextable_defaults(font.size = 10)
+ft <- flextable::flextable( data = restab, cwidth = 0.7)  
+
+tmp <- tempfile(fileext = ".docx")
+
+officer::read_docx() |> 
+  flextable::body_add_flextable(ft) |> 
+  print(target = tmp)
+
+utils::browseURL(tmp)
