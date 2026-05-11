@@ -31,8 +31,6 @@ ex_rast_centroids <- terra::xyFromCell( ex_rast[[1]], 1:ncell(ex_rast[[1]])) |>
 
 pts84 <- sf::st_transform(ex_rast_centroids, crs = 4326)
 
-# sf::st_write(pts84, here::here("data/centroids.shp"))
-
 focal_area <- sf::st_read( here::here("data/focal_area2.shp")) |> 
   sf::st_transform(crs = terra::crs(ex_rast))
 
