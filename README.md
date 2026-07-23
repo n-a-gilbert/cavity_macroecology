@@ -178,7 +178,7 @@ ________________________________________________________________________________
     | code | 6-letter ebird code |
     | Obligate or Facultative | Indicates whether species is an obligate or facultative cavity nester |
     | type | Non-excavator or excavator |
-  * [van_der_hoek.csv](./data/van_der_hoek.csv). Data from [van der Hoek et al. 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12601). See that paper for further details.
+  * [van_der_hoek.csv](./data/van_der_hoek.csv). Data from [van der Hoek et al. 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12601). See that paper for further details; this CSV is the 'Tree-cavity nesters' sheet from the ddi12601-sup-0001-TableS1.xlsx table linked under 'Supporting Information'. The 'Meta-data' sheet from this same table provides column definitions.
 
 ### figures
   * [figure_01.png](./figures/figure_01.png) Figure 1
