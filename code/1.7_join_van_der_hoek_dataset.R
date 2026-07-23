@@ -8,9 +8,8 @@ library(readxl)
 library(janitor)
 
 # van der Hoek
-fac <- readxl::read_xlsx(
-  path = here::here("data/ddi12601-sup-0001-tables1.xlsx"),
-  sheet = "Tree-cavity nesters") |> 
+fac <- readr::read_csv(
+  here::here("data/van_der_hoek.csv")) |> 
   janitor::clean_names()
 
 # bad coding practice...hard-coding a table that I want to join with VDH

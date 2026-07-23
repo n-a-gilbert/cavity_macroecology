@@ -245,7 +245,7 @@ all <- dplyr::full_join(
                                levels = c("non-excavator", 
                                           "excavator")))
 
-ggplot( data = all,
+ggplot( data = filter(all, position == "edge"),
         aes(x = het_n, 
             y = fit, 
             color = position, 
@@ -258,9 +258,9 @@ ggplot( data = all,
   geom_line(linewidth = 1.5) +
   theme_minimal() +
   scale_color_manual(
-    values = MetBrewer::MetPalettes$Pillement[[1]][c(1,4)]) +
+    values = MetBrewer::MetPalettes$OKeeffe1[[1]][c(3,9)]) +
   scale_fill_manual(
-    values = MetBrewer::MetPalettes$Pillement[[1]][c(1,4)]) +
+    values = MetBrewer::MetPalettes$OKeeffe1[[1]][c(3,9)]) +
   labs(x = "ln( 1 + abundance of other species)",
        y = "focal non-excavator abundance",
        color = "range position", 

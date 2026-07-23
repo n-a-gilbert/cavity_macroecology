@@ -51,10 +51,9 @@ species <- readr::read_csv(here::here("data/final_species_list.csv")) |>
   dplyr::rename( scientific_name = sci, species_code = code)
 
 # van der Hoek et al. 2017 table: retain columns for common name, scientific name, obligate/facultative, and type of cavity nester
-fac <- readxl::read_xlsx(
-  path = here::here("data/ddi12601-sup-0001-tables1.xlsx"),
-  sheet = "Tree-cavity nesters") |> 
-  janitor::clean_names() |> 
+fac <- readr::read_csv(
+  here::here("data/van_der_hoek.csv")) |> 
+  janitor::clean_names()|> 
   dplyr::select(com = name, scientific_name, ob = obligate_or_facultative, type = cavity_nester_type)
 
 rev <- readr::read_csv(here::here("data/focal_species_van_der_hoek_classification.csv"))
