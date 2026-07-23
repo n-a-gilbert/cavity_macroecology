@@ -197,4 +197,8 @@ ________________________________________________________________________________
   * [figure_06.pptx](./figures/figure_06.pptx) Figure 6 (PowerPoint format for annotation)
 
 ### results
-  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R)  
+  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R)
+
+### cavity_macroecology.Rproj 
+ R Project for organizing/accessing data and code in RStudio IDE
+
