@@ -119,7 +119,6 @@ ________________________________________________________________________________
     |--------|---------|
     | cell_id | grid cell identifier |
     | coast_dist | distance to nearest coastline (meters) |
-  * [ddi12601-sup-0001-tables1.xlsx](./data/ddi12601-sup-0001-tables1.xlsx). Data from [van der Hoek et al. 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12601). See that paper for further details.
   * [download_range_maps_for_these_species.csv](./data/download_range_maps_for_these_species.csv). Species to download range maps for
     | column | meaning |
     |--------|---------|
@@ -179,6 +178,7 @@ ________________________________________________________________________________
     | code | 6-letter ebird code |
     | Obligate or Facultative | Indicates whether species is an obligate or facultative cavity nester |
     | type | Non-excavator or excavator |
+  * [van_der_hoek.csv](./data/van_der_hoek.csv). Data from [van der Hoek et al. 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/ddi.12601). See that paper for further details.
 
 ### figures
   * [figure_01.png](./figures/figure_01.png) Figure 1
