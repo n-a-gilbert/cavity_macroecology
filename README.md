@@ -206,18 +206,66 @@ ________________________________________________________________________________
        | code | six-letter eBird code for the species |
        | ob | classifies species as Facultative or Obligate cavity nester |
        | type | classifies species as non-excavator or facultative excavator |
-    * fac
-    * final1
-    * final2
-    * final3
-    * final4
-    * m1_brm
-    * m2_brm
-    * m3_brm
-    * m4_brm
-    * rev
-    * sci_join
-    * tmp  
+    * fac: a table with the following columns:
+       | column | meaning |
+       |--------|---------|
+       | com | common name |
+       | scientific_name | scientific name |
+       | ob | classifies species as Facultative or Obligate cavity nester |
+       | type | classifies species as non-excavator or facultative excavator |
+    * final1: final table used to fit model where the predictor variable is abundance of all other non-excavators
+      | column | meaning |
+      |--------|---------|
+      | cell_id | unique ID for grid cell (27 x 27 km ) |
+      | com | common name per eBird |
+      | scientific_name | scientific name per eBird |
+      | species_code | 6-letter ebird code |
+      | n | relative abundance |
+      | coast_dist | distance in meters from the grid cell's centroid to the nearest coastline |
+      | range_dist | distance in meters from the grid cell's centroid to the nearest range edge |
+      | position | Position within range (edge or core) |
+      | mass | species' mass from avonet |
+      | order | species order |
+      | family | species family |
+      | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+      | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+      | tree | binary indicator of whether a species nests in trees (1) or not (0) |
+      | metric | what biodiversity metric - all rows are abundance 'n' |
+      | group | which guild (primary or secondary) cavity nester |
+      | mass_ratio | Indicates which-sized species are used in to calculate aggregate abundance of heterospecifics - "all" in this case |
+      | value | Summed abundance of heterospecific cavity-nesters within the cell |
+      | edge | indicates if the cell is an edge cell (1) or not (0) - should be prefiltered to be all 1's |
+      | x | scaled, log1p'd version of the value column |
+      | ncell | number of cells with data for the focal non-excavator |
+    * final2: table used to fit model where the predictor variable is abundance of similar-sized non-excavators. Column definitions the same as final1 
+    * final3: table used to fit model where the predictor variable is abundance of all excavators. Column definitions the same as final1 
+    * final4: table used to fit model where the predictor variable is abundance of similar-sized excavators. Column definitions the same as final1 
+    * m1_brm: brms model object for model where the predictor variable is abundance of all other non-excavators
+    * m2_brm: brms model object for model where the predictor variable is abundance of similar-sized non-excavators
+    * m3_brm: brms model object for model where the predictor variable is abundance of all excavators
+    * m4_brm: brms model object for model where the predictor variable is abundance of similar-sized excavators
+    * rev: a table with the following columns:
+       | column | meaning |
+       |--------|---------|
+       | com | common name |
+       | scientific_name | scientific name |
+       | code | six-letter eBird code for the species |
+       | ob | classifies species as Facultative or Obligate cavity nester |
+       | type | classifies species as non-excavator or facultative excavator |
+    * sci_join: a table with the following columns:
+       | column | meaning |
+       |--------|---------|
+       | com | common name |
+       | scientific_name | scientific name |
+       | code | six-letter eBird code for the species |
+       | ob | classifies species as Facultative or Obligate cavity nester |
+       | type | classifies species as non-excavator or facultative excavator |
+    * tmp: a table with the following columns:
+       | column | meaning |
+       |--------|---------|
+       | com | common name |
+       | scientific_name | scientific name |
+       | code | six-letter eBird code for the species |
 
 ### cavity_macroecology.Rproj 
  R Project for organizing/accessing data and code in RStudio IDE
