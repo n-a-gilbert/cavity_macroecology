@@ -47,6 +47,9 @@ ________________________________________________________________________________
 ### data
 ** NOTE ** eBird range maps and abundance maps are not included in this repository due to file size limitations. Upon running [1.1_download_cavity_nester_range_maps.R](./code/1.1_download_cavity_nester_range_maps.R) and [1.5_download_ebird_abundance_maps.R](./code/1.5_download_ebird_abundance_maps.R), you will have subfolders named `abundance` and `ranges` within the data folder.
   * [chia](./data/chia). Folder with tables from [Chia et al. 2023](https://www.nature.com/articles/s41597-023-02837-1). See that publication for further details
+     * [NestTrait_v2.csv](./data/chia/NestTrait_v2.csv) Nest trait data from Chia et al. 2023
+     * [NestTrait_v2_metadata.csv](./data/chia/NestTrait_v2_metadata.csv) Column definitions for [NestTrait_v2.csv](./data/chia/NestTrait_v2.csv)
+     * [NestTrait_v2_ref.csv](./data/chia/NestTrait_v2_ref.csv) References used to create [NestTrait_v2.csv](./data/chia/NestTrait_v2.csv)  
   * [GHM_27km_WGS84.tif](.data/GHM_27km_WGS84.tif) Human modification raster aggregated to 27 km resolution using Google Earth Engine (GEE). See [GEE Data Catalogue](https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification) for more information on this layer.
   * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail  
   * [cavity_nesters_abundance_dists.csv](./data/cavity_nesters_abundance_dists.csv). Table with cavity-nester abundance and columns for distance to coast and range edge.
