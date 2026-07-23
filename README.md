@@ -70,9 +70,9 @@ ________________________________________________________________________________
     | sci | scientific name |
     | com | common name |
     | code | 6-letter code |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
-    | tree | binary indicator of whether or not species nests in trees |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+    | tree | binary indicator of whether a species nests in trees (1) or not (0) |
   * [cavity_species_REVIEWED.csv](./data/cavity_species_REVIEWED.csv). Final table (same as above, but with our annotations added)
     | column | meaning |
     |--------|---------|
@@ -81,10 +81,10 @@ ________________________________________________________________________________
     | sci | scientific name |
     | com | common name |
     | code | 6-letter code |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
-    | tree | binary indicator of whether or not species nests in trees |
-    | feral | binary indicator of whether species occurs only as small feral populations in North America; this was done for parrots only |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+    | tree | binary indicator of whether a species nests in trees (1) or not (0) |
+    | feral | binary indicator of whether the species occurs only as small feral populations in North America (1) or not (0); this was done for parrots only |
     | neil_classification | First author (Neil) did a initial screening and classified species as "good", "omit" (not cavity nesters), or "idk" (species he was unsure of) |
     | hallie_classification | Last author (Hallie) did a subsequent screening of species marked "idk" in the previous step and classified species as "good" (cavity nesters) or "omit" (not cavity nesters) |
     | notes | Notes taken during manual review |
@@ -102,9 +102,9 @@ ________________________________________________________________________________
     | mass | species' mass from avonet |
     | order | species order |
     | family | species family |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
-    | tree | binary indicator of whether or not species nests in trees |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+    | tree | binary indicator of whether a species nests in trees (1) or not (0) |
     | n_secondary | summed abundance of other non-excavators within the grid cell |
     | sr_secondary | species richness of other non-excavators within the grid cell |
     | n_secondary_0.5 | summed abundance of other non-excavators - similar sized only - within the grid cell |
@@ -130,9 +130,9 @@ ________________________________________________________________________________
     | species_code | 6-letter ebird code |
     | scientific_name | scientific name per eBird |
     | common_name | common name per eBird |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
-    | tree | binary indicator of whether or not species nests in trees |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+    | tree | binary indicator of whether a species nests in trees (1) or not (0) |
   * [final_species_list.csv](./data/final_species_list.csv). Species list after some filtering/review, etc.
     | column | meaning |
     |--------|---------|
@@ -141,9 +141,9 @@ ________________________________________________________________________________
     | sci | scientific name per eBird |
     | com | common name per eBird |
     | code | 6-letter ebird code |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
-    | tree | binary indicator of whether or not species nests in trees |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
+    | tree | binary indicator of whether a species nests in trees (1) or not (0) |
   * [focal_area2.shp](./data/focal_area2.shp). Focal area (mainland US and Canada); this polygon was created in [1.6_create_focal_area_shapefile](./code/1.6_create_focal_area_shapefile.R). The other extensions (`.dbf`, etc) are in this folder but not described here.
   * [focal_species_van_der_hoek_classification.csv](./data/focal_species_van_der_hoek_classification.csv). Non-excavators from analysis with van der Hoek classifications.
     | column | meaning |
@@ -165,8 +165,8 @@ ________________________________________________________________________________
     | family | species family |
     | scientific_name | scientific name per eBird |
     | common_name | common name per eBird |
-    | primary | binary indicator of whether or not species is a primary (excavator) cavity-nesting species |
-    | secondary | binary indicator of whether or not species is a secondary (non-excavator) cavity-nesting species |
+    | primary | binary indicator of whether a species is primary excavator (1) or not (0) cavity-nesting species |
+    | secondary | binary indicator of whether or not species is a secondary non-excavator (1) cavity-nesting species or not (0) |
   * [review_species_van_der_hoek_join.csv](./data/review_species_van_der_hoek_join.csv). Small table of species to manually review due to taxonomy idiosyncracies
     | column | meaning |
     |--------|---------|
