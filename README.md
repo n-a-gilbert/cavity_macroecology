@@ -197,7 +197,27 @@ ________________________________________________________________________________
   * [figure_06.pptx](./figures/figure_06.pptx) Figure 6 (PowerPoint format for annotation)
 
 ### results
-  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R)
+  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R). This is an RData object that contains the following:
+    * com_join: a table with the following columns:
+       | column | meaning |
+       |--------|---------|
+       | com | common name |
+       | scientific_name | scientific name |
+       | code | six-letter eBird code for the species |
+       | ob | classifies species as Facultative or Obligate cavity nester |
+       | type | classifies species as non-excavator or facultative excavator |
+    * fac
+    * final1
+    * final2
+    * final3
+    * final4
+    * m1_brm
+    * m2_brm
+    * m3_brm
+    * m4_brm
+    * rev
+    * sci_join
+    * tmp  
 
 ### cavity_macroecology.Rproj 
  R Project for organizing/accessing data and code in RStudio IDE
