@@ -197,7 +197,7 @@ ________________________________________________________________________________
   * [figure_06.pptx](./figures/figure_06.pptx) Figure 6 (PowerPoint format for annotation)
 
 ### results
-  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R). This is an RData object that contains the following:
+  * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from the [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R) script located in the [code](./code) folder. This is an RData object that contains the following:
     * com_join: a table with the following columns:
        | column | meaning |
        |--------|---------|
