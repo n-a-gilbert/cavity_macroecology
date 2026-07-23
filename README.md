@@ -51,7 +51,7 @@ ________________________________________________________________________________
      * [NestTrait_v2_metadata.csv](./data/chia/NestTrait_v2_metadata.csv) Column definitions for [NestTrait_v2.csv](./data/chia/NestTrait_v2.csv)
      * [NestTrait_v2_ref.csv](./data/chia/NestTrait_v2_ref.csv) References used to create [NestTrait_v2.csv](./data/chia/NestTrait_v2.csv)  
   * [GHM_27km_WGS84.tif](.data/GHM_27km_WGS84.tif) Human modification raster aggregated to 27 km resolution using Google Earth Engine (GEE). See [GEE Data Catalogue](https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification) for more information on this layer.
-  * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail  
+  * [avonet.csv](./data/avonet.csv). AvoNET database; see [Tobias et al. 2022](https://onlinelibrary.wiley.com/doi/10.1111/ele.13898) for detail. This CSV is the 'AVONET1_BirdLife' sheet of the 'AVONET Supplementary dataset 1.xlsx' file available for download on [Figshare](https://figshare.com/s/b990722d72a26b5bfead?file=34480856). Column definitions are provided in the 'Metadata' sheet of the 'AVONET Supplementary dataset 1.xlsx' file.    
   * [cavity_nesters_abundance_dists.csv](./data/cavity_nesters_abundance_dists.csv). Table with cavity-nester abundance and columns for distance to coast and range edge.
     | column | meaning |
     |--------|---------|
