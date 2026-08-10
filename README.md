@@ -199,21 +199,6 @@ ________________________________________________________________________________
 
 ### results
   * [us_canada_edge_results2.RData](./results/us_canada_edge_results2.RData). Model results generated from the [3.1_fit_cross_species_models.R](./code/3.1_fit_cross_species_models.R) script located in the [code](./code) folder. This is an RData object that contains the following:
-    * com_join: a table with the following columns:
-       | column | meaning |
-       |--------|---------|
-       | com | common name |
-       | scientific_name | scientific name |
-       | code | six-letter eBird code for the species |
-       | ob | classifies species as Facultative or Obligate cavity nester |
-       | type | classifies species as non-excavator or facultative excavator |
-    * fac: a table with the following columns:
-       | column | meaning |
-       |--------|---------|
-       | com | common name |
-       | scientific_name | scientific name |
-       | ob | classifies species as Facultative or Obligate cavity nester |
-       | type | classifies species as non-excavator or facultative excavator |
     * final1: final table used to fit model where the predictor variable is abundance of all other non-excavators
       | column | meaning |
       |--------|---------|
@@ -245,28 +230,6 @@ ________________________________________________________________________________
     * m2_brm: brms model object for model where the predictor variable is abundance of similar-sized non-excavators
     * m3_brm: brms model object for model where the predictor variable is abundance of all excavators
     * m4_brm: brms model object for model where the predictor variable is abundance of similar-sized excavators
-    * rev: a table with the following columns:
-       | column | meaning |
-       |--------|---------|
-       | com | common name |
-       | scientific_name | scientific name |
-       | code | six-letter eBird code for the species |
-       | ob | classifies species as Facultative or Obligate cavity nester |
-       | type | classifies species as non-excavator or facultative excavator |
-    * sci_join: a table with the following columns:
-       | column | meaning |
-       |--------|---------|
-       | com | common name |
-       | scientific_name | scientific name |
-       | code | six-letter eBird code for the species |
-       | ob | classifies species as Facultative or Obligate cavity nester |
-       | type | classifies species as non-excavator or facultative excavator |
-    * tmp: a table with the following columns:
-       | column | meaning |
-       |--------|---------|
-       | com | common name |
-       | scientific_name | scientific name |
-       | code | six-letter eBird code for the species |
 
 ### cavity_macroecology.Rproj 
  R Project for organizing/accessing data and code in RStudio IDE
