@@ -43,6 +43,7 @@ ________________________________________________________________________________
   * [5.4_revision_coast_50km.R](./code/5.4_revision_coast_50km.R) Revision sensitivity analysis: defining non-coastal cells as >50 km from coast (instead of 100 km)
   * [5.5_revision_supercompetitor_habitat.R](./code/5.5_revision_supercompetitor_habitat.R) Revision analysis: accounting for anthropogenic habitat in supercompetitor models
   * [5.6_revision_body_mass_25percent.R](./code/5.6_revision_body_mass_25percent.R) Revision sensitivity analysis: evaluating effects of heterospecifics within 25% of body mass
+  * [5.7_revision_supercompetitor_all_species.R](./code/5.7_revision_supercompetitor_all_species.R) Revision analysis evaluating all species regardless of body size
 
 ### data
 ** NOTE ** eBird range maps and abundance maps are not included in this repository due to file size limitations. Upon running [1.1_download_cavity_nester_range_maps.R](./code/1.1_download_cavity_nester_range_maps.R) and [1.5_download_ebird_abundance_maps.R](./code/1.5_download_ebird_abundance_maps.R), you will have subfolders named `abundance` and `ranges` within the data folder.
